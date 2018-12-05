@@ -9,8 +9,8 @@ package onlineshop;
  *
  * @author Raldo Kusuma
  */
-public interface iHalaman{
-    
+public interface iHalaman{    
     public void showPage();
     public void hidePage();
+    
 }
