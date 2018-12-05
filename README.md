@@ -1,1 +1,1 @@
-onlineshopping
+An OnlineShopping implementation on Java
