@@ -16,6 +16,7 @@ public class HalamanUtama extends javax.swing.JFrame implements iHalaman{
      */
     public HalamanUtama() {
         initComponents();
+        
     }
 
     /**
@@ -35,11 +36,11 @@ public class HalamanUtama extends javax.swing.JFrame implements iHalaman{
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        manageproductbtn = new javax.swing.JButton();
+        viewProduct = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setPreferredSize(new java.awt.Dimension(1280, 720));
 
         jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Important\\KULIAH\\PPL\\OnlineShop\\src\\assets\\Samsung_Galaxy_Tab_S3_banner_2_fitter_640x360.jpg")); // NOI18N
 
@@ -59,7 +60,20 @@ public class HalamanUtama extends javax.swing.JFrame implements iHalaman{
 
         jLabel6.setIcon(new javax.swing.ImageIcon("D:\\Important\\KULIAH\\PPL\\OnlineShop\\src\\assets\\oppo-f1-plus_240x240.jpeg")); // NOI18N
 
-        jButton1.setText("Manage Produk");
+        manageproductbtn.setText("Manage Produk");
+        manageproductbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manageproductbtnActionPerformed(evt);
+            }
+        });
+
+        viewProduct.setText("ViewProduct");
+        viewProduct.setName(""); // NOI18N
+        viewProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewProductActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,10 +102,12 @@ public class HalamanUtama extends javax.swing.JFrame implements iHalaman{
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(549, 549, 549)
+                .addGap(180, 180, 180)
+                .addComponent(viewProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(185, 185, 185)
                 .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(manageproductbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(76, 76, 76))
         );
         layout.setVerticalGroup(
@@ -99,9 +115,16 @@ public class HalamanUtama extends javax.swing.JFrame implements iHalaman{
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(manageproductbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
+                        .addGap(43, 43, 43))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(viewProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -113,11 +136,22 @@ public class HalamanUtama extends javax.swing.JFrame implements iHalaman{
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addGap(113, 113, 113))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void manageproductbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageproductbtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_manageproductbtnActionPerformed
+
+    private void viewProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewProductActionPerformed
+        // TODO add your handling code here:
+//        String nama = viewProduct.getName();
+        new HalamanLoadingProgress().setVisible(true);
+        
+    }//GEN-LAST:event_viewProductActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,23 +181,22 @@ public class HalamanUtama extends javax.swing.JFrame implements iHalaman{
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new HalamanUtama().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new HalamanUtama().setVisible(true);
         });
     }
 
+    @Override
     public void showPage() {
  
     }
 
+    @Override
     public void hidePage() {
     
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -172,5 +205,7 @@ public class HalamanUtama extends javax.swing.JFrame implements iHalaman{
     private javax.swing.JLabel jLabel6;
     private java.awt.Label label1;
     private java.awt.Label label2;
+    private javax.swing.JButton manageproductbtn;
+    private javax.swing.JButton viewProduct;
     // End of variables declaration//GEN-END:variables
 }
