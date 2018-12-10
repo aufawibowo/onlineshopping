@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package onlineshop;
+package onlineshopping;
 
 /**
  *
@@ -35,7 +35,7 @@ public class HalamanDaftarProduk extends javax.swing.JFrame implements iHalaman{
         label1 = new java.awt.Label();
         view = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Important\\KULIAH\\PPL\\OnlineShop\\src\\assets\\iPhone-5s_320x240.jpeg")); // NOI18N

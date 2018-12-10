@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package onlineshop;
+package onlineshopping;
 
 /**
  *
@@ -35,7 +35,7 @@ public class HalamanDeskripsiProduk extends javax.swing.JFrame implements iHalam
 
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
 
         jLabel1.setText("jLabel1");

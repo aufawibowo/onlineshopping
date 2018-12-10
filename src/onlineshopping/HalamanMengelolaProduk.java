@@ -9,28 +9,13 @@ package onlineshopping;
  *
  * @author Raldo Kusuma
  */
-public class HalamanLoadingProgress extends javax.swing.JFrame implements iHalaman  {
+public class HalamanMengelolaProduk extends javax.swing.JFrame {
 
     /**
-     * Creates new form HalamanLoadingProgress
+     * Creates new form HalamanMengelolaProduk
      */
-    public HalamanLoadingProgress() {
+    public HalamanMengelolaProduk() {
         initComponents();
-//        new HalamanLoadingProgress().dispose();
-        new HalamanDaftarProduk().setVisible(true);
-  
-    }
-    public HalamanLoadingProgress(String para) {
-        initComponents();
-//        new HalamanLoadingProgress().dispose();
-        if("daftarproduk".equals(para)){
-            new HalamanDaftarProduk().setVisible(true);
-        }
-        else if("manageproduk".equals(para)){
-            new HalamanMengelolaProduk().setVisible(true);
-            
-        }
-        dispose();
     }
 
     /**
@@ -42,29 +27,29 @@ public class HalamanLoadingProgress extends javax.swing.JFrame implements iHalam
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jLabel1 = new javax.swing.JLabel();
+        label1 = new java.awt.Label();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setAlwaysOnTop(true);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel1.setText("Loading Progress");
+        label1.setFont(new java.awt.Font("Eras Medium ITC", 1, 48)); // NOI18N
+        label1.setText("Halaman Mengelola Produk");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(250, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(210, 210, 210))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(271, 271, 271)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(347, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(178, 178, 178)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(203, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(676, Short.MAX_VALUE))
         );
 
         pack();
@@ -87,37 +72,43 @@ public class HalamanLoadingProgress extends javax.swing.JFrame implements iHalam
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HalamanLoadingProgress.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanMengelolaProduk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HalamanLoadingProgress.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanMengelolaProduk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HalamanLoadingProgress.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanMengelolaProduk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HalamanLoadingProgress.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanMengelolaProduk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new HalamanLoadingProgress().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new HalamanMengelolaProduk().setVisible(true);
+            }
         });
-        
+    }
+    private DaftarProduk produk;
+    private Button editbtn;
+    private Button savebtn;
+    private Button addproductbtn;
+    private Button deleteproductbtn;
+    private Button switcherybtn;
+    
+    public void viewpage(){
         
     }
-           
-    @Override
-    public void showPage() {
+    
+    public void showFormulirDataProduk(){
         
     }
-
-
-    @Override
-    public void hidePage() {
+    
+    public void showFormulirProdukBaru(){
         
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private java.awt.Label label1;
     // End of variables declaration//GEN-END:variables
 }

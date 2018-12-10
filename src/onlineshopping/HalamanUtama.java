@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package onlineshop;
+package onlineshopping;
 
 /**
  *
@@ -116,15 +116,11 @@ public class HalamanUtama extends javax.swing.JFrame implements iHalaman{
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(manageproductbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
-                        .addGap(43, 43, 43))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(viewProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(manageproductbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                    .addComponent(viewProduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -143,13 +139,13 @@ public class HalamanUtama extends javax.swing.JFrame implements iHalaman{
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageproductbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageproductbtnActionPerformed
-        // TODO add your handling code here:
+        new HalamanLoadingProgress("manageproduk").setVisible(true);
     }//GEN-LAST:event_manageproductbtnActionPerformed
 
     private void viewProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewProductActionPerformed
         // TODO add your handling code here:
 //        String nama = viewProduct.getName();
-        new HalamanLoadingProgress().setVisible(true);
+        new HalamanLoadingProgress("daftarproduk").setVisible(true);
         
     }//GEN-LAST:event_viewProductActionPerformed
 
