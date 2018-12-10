@@ -46,7 +46,6 @@ public class HalamanLoadingProgress extends javax.swing.JFrame implements iHalam
             
         }
         
-        
     }
 
     /**
@@ -70,7 +69,7 @@ public class HalamanLoadingProgress extends javax.swing.JFrame implements iHalam
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(250, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(210, 210, 210))
