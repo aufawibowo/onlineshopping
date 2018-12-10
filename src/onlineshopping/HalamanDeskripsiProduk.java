@@ -34,31 +34,51 @@ public class HalamanDeskripsiProduk extends javax.swing.JFrame implements iHalam
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        addtocart = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("jLabel1");
+
+        addtocart.setText("Add to Cart");
+        addtocart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addtocartActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(520, 520, 520)
+                .addGap(534, 534, 534)
                 .addComponent(jLabel1)
-                .addContainerGap(726, Short.MAX_VALUE))
+                .addContainerGap(670, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(addtocart, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(256, 256, 256))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(jLabel1)
-                .addContainerGap(662, Short.MAX_VALUE))
+                .addGap(235, 235, 235)
+                .addComponent(addtocart, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(365, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addtocartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addtocartActionPerformed
+       new HalamanLoadingProgress("keranjang").setVisible(true);
+       
+    }//GEN-LAST:event_addtocartActionPerformed
 
     /**
      * @param args the command line arguments
@@ -88,10 +108,8 @@ public class HalamanDeskripsiProduk extends javax.swing.JFrame implements iHalam
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new HalamanDeskripsiProduk().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new HalamanDeskripsiProduk().setVisible(true);
         });
         
         
@@ -117,6 +135,7 @@ public class HalamanDeskripsiProduk extends javax.swing.JFrame implements iHalam
 
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addtocart;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

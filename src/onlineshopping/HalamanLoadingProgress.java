@@ -5,6 +5,8 @@
  */
 package onlineshopping;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Raldo Kusuma
@@ -30,7 +32,21 @@ public class HalamanLoadingProgress extends javax.swing.JFrame implements iHalam
             new HalamanMengelolaProduk().setVisible(true);
             
         }
-        dispose();
+        else if("keranjang".equals(para)){
+            new HalamanKeranjang().setVisible(true);
+            new PesanSuksesMemasukkanProduk().setVisible(true);
+            
+        }
+        else if("checkout".equals(para)){
+            new HalamanAlamatPengiriman().setVisible(true);
+            
+        }
+        else if("pembayaran".equals(para)){
+            new HalamanFormulirPembayaran().setVisible(true);
+            
+        }
+        
+        
     }
 
     /**

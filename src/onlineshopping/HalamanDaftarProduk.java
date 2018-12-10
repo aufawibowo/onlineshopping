@@ -5,6 +5,8 @@
  */
 package onlineshopping;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Raldo Kusuma
@@ -17,7 +19,6 @@ public class HalamanDaftarProduk extends javax.swing.JFrame implements iHalaman{
     public HalamanDaftarProduk() {
         initComponents();
 //        new HalamanLoadingProgress().setVisible(false);
-        
     }
        
     
@@ -86,6 +87,8 @@ public class HalamanDaftarProduk extends javax.swing.JFrame implements iHalaman{
     private void viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewActionPerformed
         String name = view.getName();
         new HalamanDeskripsiProduk(name).setVisible(true);
+        dispose();
+        
     }//GEN-LAST:event_viewActionPerformed
 
     /**
@@ -134,12 +137,12 @@ public class HalamanDaftarProduk extends javax.swing.JFrame implements iHalaman{
     
     @Override
     public void showPage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void hidePage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
