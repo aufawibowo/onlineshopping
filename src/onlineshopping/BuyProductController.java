@@ -5,6 +5,8 @@
  */
 package onlineshopping;
 
+import Views.HalamanLoadingProgressUI;
+
 /**
  *
  * @author Raldo Kusuma
@@ -13,7 +15,7 @@ public class BuyProductController {
     private HalamanDeskripsiProduk deskripsiproduk;
     private HalamanKeranjang keranjang;
 //    private PesanSuksesMemasukkanProduk pesansukseskeranjang; gada classnya
-    private HalamanLoadingProgress loading;
+    private HalamanLoadingProgressUI loading;
 //    private HalamanAlamatPengiriman alamatPengiriman; gada classnya
 //    private HalamanFormulirPembayaran formulirpembayaran; gaada class
 //    private HalamanBuktiPembelian buktipembelian; gaadaclass

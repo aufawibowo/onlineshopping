@@ -5,6 +5,8 @@
  */
 package onlineshopping;
 
+import Views.HalamanLoadingProgressUI;
+
 /**
  *
  * @author Raldo Kusuma
@@ -71,7 +73,7 @@ public class HalamanKeranjang extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void checkoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutActionPerformed
-        new HalamanLoadingProgress("checkout").setVisible(true);
+        new HalamanLoadingProgressUI("checkout").setVisible(true);
         dispose();
     }//GEN-LAST:event_checkoutActionPerformed
 

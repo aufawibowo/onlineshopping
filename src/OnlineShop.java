@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package onlineshopping;
+
+
+import Views.HalamanUtamaUI;
 
 /**
  *
@@ -15,7 +17,7 @@ public class OnlineShop {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        HalamanUtama first = new HalamanUtama();
+        HalamanUtamaUI first = new HalamanUtamaUI();
         first.setVisible(true);
     }
     

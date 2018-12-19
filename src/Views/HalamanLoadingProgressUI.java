@@ -3,47 +3,55 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package onlineshopping;
+package Views;
 
 import javax.swing.JFrame;
+import onlineshopping.HalamanAlamatPengiriman;
+import onlineshopping.HalamanDaftarProduk;
+import onlineshopping.HalamanFormulirPembayaran;
+import onlineshopping.HalamanKeranjang;
+import onlineshopping.HalamanMengelolaProduk;
+import onlineshopping.PesanSuksesMemasukkanProduk;
+import onlineshopping.iHalaman;
 
 /**
  *
  * @author Raldo Kusuma
  */
-public class HalamanLoadingProgress extends javax.swing.JFrame implements iHalaman  {
+public class HalamanLoadingProgressUI extends javax.swing.JFrame implements iHalaman  {
 
     /**
      * Creates new form HalamanLoadingProgress
      */
-    public HalamanLoadingProgress() {
+    public HalamanLoadingProgressUI() {
         initComponents();
-//        new HalamanLoadingProgress().dispose();
+//        new HalamanLoadingProgressUI().dispose();
         new HalamanDaftarProduk().setVisible(true);
-  
+        this.dispose();
     }
-    public HalamanLoadingProgress(String para) {
+    public HalamanLoadingProgressUI(String para) {
         initComponents();
-//        new HalamanLoadingProgress().dispose();
+//        new HalamanLoadingProgressUI().dispose();
         if("daftarproduk".equals(para)){
             new HalamanDaftarProduk().setVisible(true);
+            this.dispose();
         }
         else if("manageproduk".equals(para)){
             new HalamanMengelolaProduk().setVisible(true);
-            
+            this.dispose();
         }
         else if("keranjang".equals(para)){
             new HalamanKeranjang().setVisible(true);
             new PesanSuksesMemasukkanProduk().setVisible(true);
-            
+            this.dispose();
         }
         else if("checkout".equals(para)){
             new HalamanAlamatPengiriman().setVisible(true);
-            
+            this.dispose();
         }
         else if("pembayaran".equals(para)){
             new HalamanFormulirPembayaran().setVisible(true);
-            
+            this.dispose();
         }
         
     }
@@ -59,6 +67,7 @@ public class HalamanLoadingProgress extends javax.swing.JFrame implements iHalam
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jLabel1 = new javax.swing.JLabel();
+        jProgressBar1 = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -69,17 +78,21 @@ public class HalamanLoadingProgress extends javax.swing.JFrame implements iHalam
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(250, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(210, 210, 210))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(238, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
+                .addGap(222, 222, 222))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(178, 178, 178)
+                .addGap(177, 177, 177)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(203, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(171, Short.MAX_VALUE))
         );
 
         pack();
@@ -102,19 +115,20 @@ public class HalamanLoadingProgress extends javax.swing.JFrame implements iHalam
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HalamanLoadingProgress.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanLoadingProgressUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HalamanLoadingProgress.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanLoadingProgressUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HalamanLoadingProgress.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanLoadingProgressUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HalamanLoadingProgress.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanLoadingProgressUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new HalamanLoadingProgress().setVisible(true);
+            new HalamanLoadingProgressUI().setVisible(true);
         });
         
         
@@ -133,6 +147,7 @@ public class HalamanLoadingProgress extends javax.swing.JFrame implements iHalam
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }

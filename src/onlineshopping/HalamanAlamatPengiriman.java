@@ -5,6 +5,8 @@
  */
 package onlineshopping;
 
+import Views.HalamanLoadingProgressUI;
+
 /**
  *
  * @author Raldo Kusuma
@@ -71,7 +73,7 @@ public class HalamanAlamatPengiriman extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void selectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectActionPerformed
-        new HalamanLoadingProgress("pembayaran").setVisible(true);
+        new HalamanLoadingProgressUI("pembayaran").setVisible(true);
         dispose();
     }//GEN-LAST:event_selectActionPerformed
 
