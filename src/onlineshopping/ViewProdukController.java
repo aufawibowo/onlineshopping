@@ -5,6 +5,8 @@
  */
 package onlineshopping;
 
+import Views.HalamanDeskripsiProduk;
+import Views.HalamanHasilPencarianProduk;
 import Views.HalamanLoadingProgressUI;
 import Views.HalamanUtamaUI;
 

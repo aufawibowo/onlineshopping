@@ -59,11 +59,6 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Important\KULIAH\PPL\OnlineShop\src\assets\iPhone-5s_320x240.jpeg"/>
-        </Property>
-      </Properties>
     </Component>
     <Component class="java.awt.Label" name="label1">
       <Properties>

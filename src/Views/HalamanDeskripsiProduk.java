@@ -3,9 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package onlineshopping;
+package Views;
 
 import Views.HalamanLoadingProgressUI;
+import onlineshopping.Button;
+import onlineshopping.Produk;
+import onlineshopping.iHalaman;
 
 /**
  *

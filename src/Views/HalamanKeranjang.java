@@ -3,18 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package onlineshopping;
+package Views;
+
+import Views.HalamanLoadingProgressUI;
+import onlineshopping.Button;
+import onlineshopping.DaftarProdukBeli;
+import onlineshopping.Produk;
 
 /**
  *
  * @author Raldo Kusuma
  */
-public class HalamanFormulirPembayaran extends javax.swing.JFrame {
+public class HalamanKeranjang extends javax.swing.JFrame {
 
     /**
-     * Creates new form HalamanFormulirPendaftaran
+     * Creates new form HalamanKeranjang
      */
-    public HalamanFormulirPembayaran() {
+    public HalamanKeranjang() {
         initComponents();
     }
 
@@ -28,18 +33,18 @@ public class HalamanFormulirPembayaran extends javax.swing.JFrame {
     private void initComponents() {
 
         label1 = new java.awt.Label();
-        pay = new javax.swing.JButton();
+        checkout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
 
         label1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        label1.setText("Halaman Formulir Pembayaran");
+        label1.setText("Halaman Keranjang");
 
-        pay.setText("Pay");
-        pay.addActionListener(new java.awt.event.ActionListener() {
+        checkout.setText("Checkout");
+        checkout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                payActionPerformed(evt);
+                checkoutActionPerformed(evt);
             }
         });
 
@@ -48,33 +53,32 @@ public class HalamanFormulirPembayaran extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(434, Short.MAX_VALUE)
+                .addContainerGap(488, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(309, 309, 309))
+                        .addGap(450, 450, 450))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(pay, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(245, 245, 245))))
+                        .addComponent(checkout, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(210, 210, 210))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addGap(24, 24, 24)
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 385, Short.MAX_VALUE)
-                .addComponent(pay, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(200, 200, 200))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 518, Short.MAX_VALUE)
+                .addComponent(checkout, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(80, 80, 80))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void payActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payActionPerformed
-        new HalamanBuktiPembelian().setVisible(true);
-        new PesanSuksesBerbelanja().setVisible(true);
+    private void checkoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutActionPerformed
+        new HalamanLoadingProgressUI("checkout").setVisible(true);
         dispose();
-    }//GEN-LAST:event_payActionPerformed
+    }//GEN-LAST:event_checkoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -93,27 +97,35 @@ public class HalamanFormulirPembayaran extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HalamanFormulirPembayaran.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanKeranjang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HalamanFormulirPembayaran.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanKeranjang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HalamanFormulirPembayaran.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanKeranjang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HalamanFormulirPembayaran.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanKeranjang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new HalamanFormulirPembayaran().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new HalamanKeranjang().setVisible(true);
         });
     }
-
+    
+    private DaftarProdukBeli produk;
+    private Button checkoutbtn;
+    private Button continueshoppingbtn;
+    
+    private void showPage(){
+        
+    }
+    
+    private void tambahProduk(Produk produk){
+        
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton checkout;
     private java.awt.Label label1;
-    private javax.swing.JButton pay;
     // End of variables declaration//GEN-END:variables
 }

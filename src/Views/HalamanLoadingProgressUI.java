@@ -6,11 +6,6 @@
 package Views;
 
 import javax.swing.JFrame;
-import onlineshopping.HalamanAlamatPengiriman;
-import onlineshopping.HalamanDaftarProduk;
-import onlineshopping.HalamanFormulirPembayaran;
-import onlineshopping.HalamanKeranjang;
-import onlineshopping.HalamanMengelolaProduk;
 import onlineshopping.PesanSuksesMemasukkanProduk;
 import onlineshopping.iHalaman;
 
@@ -26,15 +21,16 @@ public class HalamanLoadingProgressUI extends javax.swing.JFrame implements iHal
     public HalamanLoadingProgressUI() {
         initComponents();
 //        new HalamanLoadingProgressUI().dispose();
-        new HalamanDaftarProduk().setVisible(true);
-        this.dispose();
+        //new HalamanDaftarProduk().setVisible(true);
+        //this.dispose();
     }
     public HalamanLoadingProgressUI(String para) {
         initComponents();
 //        new HalamanLoadingProgressUI().dispose();
         if("daftarproduk".equals(para)){
-            new HalamanDaftarProduk().setVisible(true);
             this.dispose();
+            System.out.println("daftar produk keluar");    
+            new HalamanDaftarProduk().setVisible(true);
         }
         else if("manageproduk".equals(para)){
             new HalamanMengelolaProduk().setVisible(true);
@@ -79,20 +75,20 @@ public class HalamanLoadingProgressUI extends javax.swing.JFrame implements iHal
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(238, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
-                .addGap(222, 222, 222))
+                .addContainerGap(211, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(196, 196, 196))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(177, 177, 177)
+                .addGap(141, 141, 141)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
 
         pack();
