@@ -7,6 +7,8 @@ package Controllers;
 
 import java.sql.*;
 import Configs.DBConnection;
+import Views.HalamanUtama;
+import Views.HalamanMengelolaProduk;
 /**
  *
  * @author muhau
@@ -19,12 +21,16 @@ public class LoginController {
         conn = db.newConnection();
     }
     
-    public sebagaiPenjual(){
-    
+    public void sebagaiPenjual(){
+        //pergi ke HalamanMengelola();
+        HalamanMengelolaProduk hp = new HalamanMengelolaProduk();
+        hp.setVisible(true);
     }
     
-    public sebagaiPembeli(){
-    
+    public void sebagaiPembeli(){
+        //pergi ke HalamanUtama();
+        HalamanUtama he = new HalamanUtama();
+        he.setVisible(true);
     }
     
 }
