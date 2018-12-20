@@ -7,18 +7,18 @@ package onlineshopping;
 
 import Views.HalamanDeskripsiProduk;
 import Views.HalamanHasilPencarianProduk;
-import Views.HalamanLoadingProgressUI;
-import Views.HalamanUtamaUI;
+import Views.HalamanLoadingProgress;
+import Views.HalamanUtama;
 
 /**
  *
  * @author Raldo Kusuma
  */
 public class ViewProdukController {
-    private HalamanUtamaUI halamanutama;
+    private HalamanUtama halamanutama;
     private HalamanDeskripsiProduk deskripsiproduk;
     private HalamanHasilPencarianProduk hasilpencarian;
-    private HalamanLoadingProgressUI loading;
+    private HalamanLoadingProgress loading;
     
     public void showPage(){
         

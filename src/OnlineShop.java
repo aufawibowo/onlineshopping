@@ -5,7 +5,7 @@
  */
 
 
-import Views.HalamanUtamaUI;
+import Views.HalamanUtama;
 
 /**
  *
@@ -17,7 +17,7 @@ public class OnlineShop {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        HalamanUtamaUI first = new HalamanUtamaUI();
+        HalamanUtama first = new HalamanUtama();
         first.setVisible(true);
     }
     

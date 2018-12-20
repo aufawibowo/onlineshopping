@@ -11,12 +11,12 @@ import onlineshopping.iHalaman;
  *
  * @author Raldo Kusuma
  */
-public class HalamanUtamaUI extends javax.swing.JFrame implements iHalaman{
+public class HalamanUtama extends javax.swing.JFrame implements iHalaman{
 
     /**
      * Creates new form HalamanUtama
      */
-    public HalamanUtamaUI() {
+    public HalamanUtama() {
         initComponents();
         
     }
@@ -129,13 +129,13 @@ public class HalamanUtamaUI extends javax.swing.JFrame implements iHalaman{
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageproductbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageproductbtnActionPerformed
-        new HalamanLoadingProgressUI("manageproduk").setVisible(true);
+        new HalamanLoadingProgress("manageproduk").setVisible(true);
     }//GEN-LAST:event_manageproductbtnActionPerformed
 
     private void viewProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewProductActionPerformed
         // TODO add your handling code here:
 //        String nama = viewProduct.getName();
-        new HalamanLoadingProgressUI("daftarproduk").setVisible(true);
+        new HalamanLoadingProgress("daftarproduk").setVisible(true);
         this.dispose();
     }//GEN-LAST:event_viewProductActionPerformed
 
@@ -156,20 +156,26 @@ public class HalamanUtamaUI extends javax.swing.JFrame implements iHalaman{
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HalamanUtamaUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HalamanUtamaUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HalamanUtamaUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HalamanUtamaUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new HalamanUtamaUI().setVisible(true);
+            new HalamanUtama().setVisible(true);
         });
     }
 

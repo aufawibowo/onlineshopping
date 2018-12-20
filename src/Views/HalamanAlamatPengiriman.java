@@ -5,7 +5,7 @@
  */
 package Views;
 
-import Views.HalamanLoadingProgressUI;
+import Views.HalamanLoadingProgress;
 
 /**
  *
@@ -73,7 +73,7 @@ public class HalamanAlamatPengiriman extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void selectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectActionPerformed
-        new HalamanLoadingProgressUI("pembayaran").setVisible(true);
+        new HalamanLoadingProgress("pembayaran").setVisible(true);
         dispose();
     }//GEN-LAST:event_selectActionPerformed
 

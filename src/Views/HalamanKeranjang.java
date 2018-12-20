@@ -5,7 +5,7 @@
  */
 package Views;
 
-import Views.HalamanLoadingProgressUI;
+import Views.HalamanLoadingProgress;
 import onlineshopping.Button;
 import onlineshopping.DaftarProdukBeli;
 import onlineshopping.Produk;
@@ -76,7 +76,7 @@ public class HalamanKeranjang extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void checkoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutActionPerformed
-        new HalamanLoadingProgressUI("checkout").setVisible(true);
+        new HalamanLoadingProgress("checkout").setVisible(true);
         dispose();
     }//GEN-LAST:event_checkoutActionPerformed
 
@@ -105,6 +105,9 @@ public class HalamanKeranjang extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(HalamanKeranjang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

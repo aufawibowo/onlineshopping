@@ -5,7 +5,7 @@
  */
 package Views;
 
-import Views.HalamanLoadingProgressUI;
+import Views.HalamanLoadingProgress;
 import onlineshopping.Button;
 import onlineshopping.Produk;
 import onlineshopping.iHalaman;
@@ -25,7 +25,7 @@ public class HalamanDeskripsiProduk extends javax.swing.JFrame implements iHalam
     
     public HalamanDeskripsiProduk(String para) {
         initComponents();
-        new HalamanLoadingProgressUI().dispose();
+        new HalamanLoadingProgress().dispose();
         jLabel1.setText(para);
     }
 
@@ -81,7 +81,7 @@ public class HalamanDeskripsiProduk extends javax.swing.JFrame implements iHalam
     }// </editor-fold>//GEN-END:initComponents
 
     private void addtocartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addtocartActionPerformed
-       new HalamanLoadingProgressUI("keranjang").setVisible(true);
+       new HalamanLoadingProgress("keranjang").setVisible(true);
        
     }//GEN-LAST:event_addtocartActionPerformed
 

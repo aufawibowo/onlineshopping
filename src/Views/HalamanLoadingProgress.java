@@ -13,20 +13,20 @@ import onlineshopping.iHalaman;
  *
  * @author Raldo Kusuma
  */
-public class HalamanLoadingProgressUI extends javax.swing.JFrame implements iHalaman  {
+public class HalamanLoadingProgress extends javax.swing.JFrame implements iHalaman  {
 
     /**
      * Creates new form HalamanLoadingProgress
      */
-    public HalamanLoadingProgressUI() {
+    public HalamanLoadingProgress() {
         initComponents();
-//        new HalamanLoadingProgressUI().dispose();
+//        new HalamanLoadingProgress().dispose();
         //new HalamanDaftarProduk().setVisible(true);
         //this.dispose();
     }
-    public HalamanLoadingProgressUI(String para) {
+    public HalamanLoadingProgress(String para) {
         initComponents();
-//        new HalamanLoadingProgressUI().dispose();
+//        new HalamanLoadingProgress().dispose();
         if("daftarproduk".equals(para)){
             this.dispose();
             System.out.println("daftar produk keluar");    
@@ -111,20 +111,26 @@ public class HalamanLoadingProgressUI extends javax.swing.JFrame implements iHal
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HalamanLoadingProgressUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanLoadingProgress.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HalamanLoadingProgressUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanLoadingProgress.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HalamanLoadingProgressUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanLoadingProgress.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HalamanLoadingProgressUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanLoadingProgress.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new HalamanLoadingProgressUI().setVisible(true);
+            new HalamanLoadingProgress().setVisible(true);
         });
         
         
