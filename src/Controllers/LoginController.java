@@ -7,8 +7,8 @@ package Controllers;
 
 import java.sql.*;
 import Configs.DBConnection;
-import Views.HalamanUtama;
-import Views.HalamanMengelolaProduk;
+import Halaman.HalamanUtama;
+import Halaman.HalamanMengelolaProduk;
 /**
  *
  * @author muhau

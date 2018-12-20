@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views;
+package Halaman;
 
 import javax.swing.JFrame;
 import onlineshopping.PesanSuksesMemasukkanProduk;

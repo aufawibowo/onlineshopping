@@ -5,10 +5,10 @@
  */
 package onlineshopping;
 
-import Views.HalamanDeskripsiProduk;
-import Views.HalamanHasilPencarianProduk;
-import Views.HalamanLoadingProgress;
-import Views.HalamanUtama;
+import Halaman.HalamanDeskripsiProduk;
+import Halaman.HalamanHasilPencarianProduk;
+import Halaman.HalamanLoadingProgress;
+import Halaman.HalamanUtama;
 
 /**
  *

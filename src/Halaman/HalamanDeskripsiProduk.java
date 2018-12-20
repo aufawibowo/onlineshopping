@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views;
+package Halaman;
 
-import Views.HalamanLoadingProgress;
+import Halaman.HalamanLoadingProgress;
 import onlineshopping.Button;
 import onlineshopping.Produk;
 import onlineshopping.iHalaman;
+import Models.Produk;
 
 /**
  *
  * @author Raldo Kusuma
  */
 public class HalamanDeskripsiProduk extends javax.swing.JFrame implements iHalaman{
-
+    Produk produk = new Produk();
     /**
      * Creates new form HalamanDeskripsiProduk
      */
@@ -38,52 +39,22 @@ public class HalamanDeskripsiProduk extends javax.swing.JFrame implements iHalam
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        addtocart = new javax.swing.JButton();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("jLabel1");
-
-        addtocart.setText("Add to Cart");
-        addtocart.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addtocartActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(534, 534, 534)
-                .addComponent(jLabel1)
-                .addContainerGap(670, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(addtocart, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(256, 256, 256))
+            .addGap(0, 740, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jLabel1)
-                .addGap(235, 235, 235)
-                .addComponent(addtocart, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(365, Short.MAX_VALUE))
+            .addGap(0, 470, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void addtocartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addtocartActionPerformed
-       new HalamanLoadingProgress("keranjang").setVisible(true);
-       
-    }//GEN-LAST:event_addtocartActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,7 +111,5 @@ public class HalamanDeskripsiProduk extends javax.swing.JFrame implements iHalam
 
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addtocart;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

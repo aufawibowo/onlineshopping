@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views;
+package Halaman;
 
 import javax.swing.JFrame;
 import onlineshopping.Button;
 import onlineshopping.DaftarProduk;
 import onlineshopping.TextField;
 import onlineshopping.iHalaman;
-
+import Models.Produk;
 /**
  *
  * @author Raldo Kusuma
  */
 public class HalamanDaftarProduk extends javax.swing.JFrame implements iHalaman{
-
+    Produk produk = new Produk();
     /**
      * Creates new form HalamanDaftarProduk
      */
@@ -36,22 +36,46 @@ public class HalamanDaftarProduk extends javax.swing.JFrame implements iHalaman{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        kotaksearch = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
+
+        kotaksearch.setText("Kotak Pencarian");
+        kotaksearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kotaksearchActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 740, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(196, 196, 196)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(kotaksearch)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE))
+                .addContainerGap(218, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 470, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(kotaksearch, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void kotaksearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kotaksearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kotaksearchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,7 +113,6 @@ public class HalamanDaftarProduk extends javax.swing.JFrame implements iHalaman{
     }
     
     private DaftarProduk produk;
-    private TextField kotaksearch;
     private Button viewbtn;
     private Button searchbtn;
    
@@ -108,5 +131,7 @@ public class HalamanDaftarProduk extends javax.swing.JFrame implements iHalaman{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField kotaksearch;
     // End of variables declaration//GEN-END:variables
 }

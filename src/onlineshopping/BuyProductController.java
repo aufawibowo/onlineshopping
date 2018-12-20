@@ -5,9 +5,9 @@
  */
 package onlineshopping;
 
-import Views.HalamanDeskripsiProduk;
-import Views.HalamanKeranjang;
-import Views.HalamanLoadingProgress;
+import Halaman.HalamanDeskripsiProduk;
+import Halaman.HalamanKeranjang;
+import Halaman.HalamanLoadingProgress;
 
 /**
  *
