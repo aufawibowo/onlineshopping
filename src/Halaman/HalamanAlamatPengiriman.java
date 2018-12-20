@@ -81,6 +81,18 @@ public class HalamanAlamatPengiriman extends javax.swing.JFrame {
         });
     }
     
+    public class viewPage(){
+    
+    }
+    
+    public class selectAlamat(){
+
+    }
+    
+    public class showFormulir(){
+
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }

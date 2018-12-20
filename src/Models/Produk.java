@@ -12,6 +12,8 @@ package Models;
 public class Produk {
     private String idProduk;
     private String namaproduk;
+    private int hargaproduk;
+    private String deskripsiproduk;
     
     public Produk{
     
@@ -33,4 +35,19 @@ public class Produk {
         this.idProduk = input;
     }
     
+    public String getHargaProduk(){
+        return hargaproduk;
+    }
+    
+    public setHargaProduk(String input){
+        this.hargaproduk = input;
+    }
+    
+    public String getDeskripsiProduk(){
+        return deskripsiproduk;
+    }
+    
+    public setDeskripsiProduk(String input){
+        this.deskripsiproduk = input;
+    }
 }

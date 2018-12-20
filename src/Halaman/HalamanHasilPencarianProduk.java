@@ -18,7 +18,7 @@ public class HalamanHasilPencarianProduk {
         
     }
     
-    public void validat(){
+    public void validate(){
         
     }
 }
