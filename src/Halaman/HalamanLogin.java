@@ -12,16 +12,18 @@ package Halaman;
 
 import javax.swing.JComboBox;
 import States.Session;
-import Controller.LoginController;
+import Controllers.LoginController;
 //import States.Username;
 
 public class HalamanLogin extends javax.swing.JFrame {
-
+    
+    LoginController logincontroller = new LoginController();
     /**
      * Creates new form LoginUI
      */
     public HalamanLogin() {
         initComponents();
+        
         
         JComboBox comboBox = this.userSelector;
         comboBox.addItem(new MyComboItem(1,"Pembeli"));
@@ -39,11 +41,11 @@ public class HalamanLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        loginBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        unameBox = new javax.swing.JTextField();
+        pwdBox = new javax.swing.JPasswordField();
         userSelector = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,7 +53,12 @@ public class HalamanLogin extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("LOGIN ONLINESHOPPING");
 
-        jButton1.setText("LOGIN");
+        loginBtn.setText("LOGIN");
+        loginBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginBtnActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Username");
@@ -59,17 +66,17 @@ public class HalamanLogin extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Password");
 
-        jTextField1.setText("");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        unameBox.setText("");
+        unameBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                unameBoxActionPerformed(evt);
             }
         });
 
-        jPasswordField1.setText("");
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        pwdBox.setText("");
+        pwdBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                pwdBoxActionPerformed(evt);
             }
         });
 
@@ -98,11 +105,11 @@ public class HalamanLogin extends javax.swing.JFrame {
                                 .addComponent(jLabel3))
                             .addGap(68, 68, 68)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jPasswordField1)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(pwdBox)
+                                .addComponent(unameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.CENTER)
                         .addComponent(userSelector, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.Alignment.CENTER))
+                        .addComponent(loginBtn, javax.swing.GroupLayout.Alignment.CENTER))
                     .addGap(204, 204, 204))
             );
             layout.setVerticalGroup(
@@ -113,9 +120,9 @@ public class HalamanLogin extends javax.swing.JFrame {
                     .addGap(18, 18, 18)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(unameBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(pwdBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel2)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -123,28 +130,20 @@ public class HalamanLogin extends javax.swing.JFrame {
                     .addGap(11, 11, 11)
                     .addComponent(userSelector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(jButton1)
+                    .addComponent(loginBtn)
                     .addGap(140, 140, 140))
             );
 
             pack();
         }// </editor-fold>//GEN-END:initComponents
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    private void pwdBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwdBoxActionPerformed
+    
+    }//GEN-LAST:event_pwdBoxActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        
-        
-        
-        
-        // C A R I  P E R H A T I A N  D O N G
-        
-        
-        
-        
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void unameBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unameBoxActionPerformed
+
+    }//GEN-LAST:event_unameBoxActionPerformed
 
     private void userSelectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userSelectorActionPerformed
           
@@ -164,6 +163,17 @@ public class HalamanLogin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_userSelectorItemStateChanged
 
+    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_loginBtnActionPerformed
+
+    public void verifyCredentials(){
+        //logincontroller.isUnameTrue(input);
+        //logincontroller.isPwdTrue(input);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -234,12 +244,12 @@ class MyComboItem {
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton loginBtn;
+    private javax.swing.JPasswordField pwdBox;
+    private javax.swing.JTextField unameBox;
     private javax.swing.JComboBox<String> userSelector;
     // End of variables declaration//GEN-END:variables
 }

@@ -60,4 +60,8 @@ CREATE TABLE produk(
   CONSTRAINT fk_c_pd FOREIGN KEY (c_id) REFERENCES kategori(c_id)
 );
 
-INSERT INTO login VALUES(1, 'admin')
+INSERT INTO login VALUES(1, 'admin', 'admin');
+
+
+SELECT * FROM login
+

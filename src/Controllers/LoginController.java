@@ -18,7 +18,14 @@ public class LoginController {
     Connection conn = null;
     
     public LoginController(){
-        conn = db.newConnection();
+       try{
+           Statement stmt = conn.createStatement();
+           ResultSet username = stmt.executeQuery("select lg_uname from login");
+           ResultSet password = stmt.executeQuery("select lg_pwd from login");
+       }
+       catch(Exception e){
+           System.out.println(e);
+       }
     }
     
     public void sebagaiPenjual(){
@@ -31,6 +38,28 @@ public class LoginController {
         //pergi ke HalamanUtama();
         HalamanUtama he = new HalamanUtama();
         he.setVisible(true);
+    }
+    
+    public boolean isUnameTrue(String input){
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet username = stmt.executeQuery("select lg_uname from login");
+            System.out.println(username);
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+    }
+    
+    public boolean isPwdTrue(String input){
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet password = stmt.executeQuery("select lg_pwd from login");
+            System.out.println(password);
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
     }
     
 }
