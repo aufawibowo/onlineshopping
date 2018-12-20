@@ -11,8 +11,13 @@ import java.sql.*;
  */
 public class DBConnection {
     private Connection con = null;
-    public DBConnection(){
-
+    
+    public void DBConnection(){
+        newConnection();
+    }
+    
+    public void main(String[] args) {
+        newConnection();
     }
     
     //opens a new connecting to DB
@@ -22,6 +27,7 @@ public class DBConnection {
             con = DriverManager.getConnection(  
             "jdbc:mysql://localhost:3306/login","root","");   
             System.out.println("Sukses");
+            //return con;
         }
         catch(Exception e){ 
             System.out.println(e);

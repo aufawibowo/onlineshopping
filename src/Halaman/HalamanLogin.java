@@ -13,11 +13,17 @@ package Halaman;
 import javax.swing.JComboBox;
 import States.Session;
 import Controllers.LoginController;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.*;
+import Configs.DBConnection;
+import Halaman.HalamanUtama;
 //import States.Username;
 
 public class HalamanLogin extends javax.swing.JFrame {
     
-    LoginController logincontroller = new LoginController();
     /**
      * Creates new form LoginUI
      */
@@ -40,18 +46,19 @@ public class HalamanLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
         loginBtn = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        unameLabel = new javax.swing.JLabel();
+        pwdLabel = new javax.swing.JLabel();
         unameBox = new javax.swing.JTextField();
         pwdBox = new javax.swing.JPasswordField();
         userSelector = new javax.swing.JComboBox<>();
+        testDBConnectionBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel1.setText("LOGIN ONLINESHOPPING");
+        titleLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        titleLabel.setText("LOGIN ONLINESHOPPING");
 
         loginBtn.setText("LOGIN");
         loginBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -60,11 +67,11 @@ public class HalamanLogin extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Username");
+        unameLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        unameLabel.setText("Username");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Password");
+        pwdLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        pwdLabel.setText("Password");
 
         unameBox.setText("");
         unameBox.addActionListener(new java.awt.event.ActionListener() {
@@ -92,31 +99,44 @@ public class HalamanLogin extends javax.swing.JFrame {
                 }
             });
 
+            testDBConnectionBtn.setText("TEST DB CONNECTION");
+            testDBConnectionBtn.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    testDBConnectionBtnActionPerformed(evt);
+                }
+            });
+
             javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
             getContentPane().setLayout(layout);
             layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createSequentialGroup()
                     .addContainerGap(241, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel3))
-                            .addGap(68, 68, 68)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(pwdBox)
-                                .addComponent(unameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.CENTER)
-                        .addComponent(userSelector, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(loginBtn, javax.swing.GroupLayout.Alignment.CENTER))
-                    .addGap(204, 204, 204))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(unameLabel)
+                                        .addComponent(pwdLabel))
+                                    .addGap(68, 68, 68)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(pwdBox)
+                                        .addComponent(unameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(titleLabel, javax.swing.GroupLayout.Alignment.CENTER)
+                                .addComponent(userSelector, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(204, 204, 204))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(testDBConnectionBtn)
+                            .addGap(53, 53, 53)
+                            .addComponent(loginBtn)
+                            .addGap(228, 228, 228))))
             );
             layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addContainerGap(172, Short.MAX_VALUE)
-                    .addComponent(jLabel1)
+                    .addContainerGap(166, Short.MAX_VALUE)
+                    .addComponent(titleLabel)
                     .addGap(18, 18, 18)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
@@ -124,14 +144,16 @@ public class HalamanLogin extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(pwdBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel2)
+                            .addComponent(unameLabel)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel3)))
+                            .addComponent(pwdLabel)))
                     .addGap(11, 11, 11)
                     .addComponent(userSelector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(loginBtn)
-                    .addGap(140, 140, 140))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(loginBtn)
+                        .addComponent(testDBConnectionBtn))
+                    .addGap(146, 146, 146))
             );
 
             pack();
@@ -164,10 +186,33 @@ public class HalamanLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_userSelectorItemStateChanged
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
-        // TODO add your handling code here:
         
+        DBConnection db = new DBConnection();
+        Connection conn = null;
+        
+        String sql = "Select * from login where lg_uname=? and lg_pwd=?";
+        try{
+        Statement stmt = conn.createStatement();  
+        ResultSet res=stmt.executeQuery(sql);  
+        System.out.println(res);
+            if(res.next()){
+                    //JOptionPane.showMessageDialog(null, "Welcome user");
+                    HalamanUtama welcome = new HalamanUtama();
+                    welcome.setVisible(true);
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
         
     }//GEN-LAST:event_loginBtnActionPerformed
+
+    private void testDBConnectionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testDBConnectionBtnActionPerformed
+        // TODO add your handling code here:
+        DBConnection db = new DBConnection();
+        Connection conn = null;
+        
+        db.newConnection();
+    }//GEN-LAST:event_testDBConnectionBtnActionPerformed
 
     public void verifyCredentials(){
         //logincontroller.isUnameTrue(input);
@@ -244,12 +289,13 @@ class MyComboItem {
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton loginBtn;
     private javax.swing.JPasswordField pwdBox;
+    private javax.swing.JLabel pwdLabel;
+    private javax.swing.JButton testDBConnectionBtn;
+    private javax.swing.JLabel titleLabel;
     private javax.swing.JTextField unameBox;
+    private javax.swing.JLabel unameLabel;
     private javax.swing.JComboBox<String> userSelector;
     // End of variables declaration//GEN-END:variables
 }
